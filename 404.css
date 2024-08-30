@@ -1,0 +1,88 @@
+/* Variables for light mode */
+:root {
+    --primary-bg-color: white; /* Background color for the body */
+    --primary-text-color: #2c3e50; /* Primary text color */
+    --secondary-bg-color: #d3d3d3; /* Background color for secondary elements like error container */
+    --secondary-text-color: #7f8c8d; /* Secondary text color */
+    --accent-color: #2c3e50; /* Color for accents and possibly links or buttons */
+    --hover-color: #0056b3; /* Color change for elements like buttons on hover */
+}
+
+/* Dark theme variables - overrides the light theme variables when dark theme is selected */
+[data-theme="dark"] {
+    --primary-bg-color: #2e2e2e;
+    --primary-text-color: white;
+    --secondary-bg-color: #3a3a3a;
+    --secondary-text-color: #bdc3c7;
+    --accent-color: white;
+    --hover-color: #999;
+}
+
+/* Styles for the body of the error page */
+.error-body {
+    font-family: "Poppins", sans-serif; /* Sets a modern, clean font */
+    color: var(--primary-text-color); /* Uses variable for text color */
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Uses Flexbox for centering */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    background-color: var(--primary-bg-color); /* Uses variable for background color */
+}
+
+/* Container for the error message, centrally positioned */
+.error-container {
+    position: relative; /* Enables absolute positioning of children like the theme switch */
+    text-align: center; /* Centers the text inside the container */
+    background-color: var(--secondary-bg-color); /* Secondary background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 2rem; /* Spacing inside the container */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Adds depth with a shadow */
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Maximum width to maintain readability */
+}
+
+/* Style for the theme switcher, positioned inside the error container */
+.theme-switch-wrapper {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer; /* Changes the cursor to indicate interactiveness */
+}
+
+/* Style for the main heading */
+h1 {
+    color: var(--primary-text-color); /* Uses the primary text color */
+    letter-spacing: 2px; /* Increases spacing between letters for effect */
+    padding-bottom: 15px;
+    margin-bottom: 2rem; /* Spacing after the heading */
+}
+
+/* Style for the paragraph text */
+p {
+    color: var(--secondary-text-color); /* Uses the secondary text color */
+    margin-bottom: 1.5rem; /* Spacing after the paragraph */
+}
+
+/* Style for the return home button */
+.return-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--accent-color); /* Button background color */
+    color: var(--primary-bg-color); /* Text color for contrast */
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Changes the background color of the return home button on hover */
+.return-home:hover {
+    background-color: var(--hover-color);
+}
+
+/* Prevents text selection of the theme switch icon for better user experience */
+#switch-icon {
+    user-select: none;
+}

@@ -1,0 +1,27 @@
+#leftColumn{
+    position: relative;
+}
+
+#rightColumn{
+    position: relative;
+}
+
+#AddNewUserText{
+    min-width: 300px;
+}
+
+.ClassPosts:hover, 
+.ClassGroups:hover,
+.ClassFilteredGroups:hover,
+.ClassFilteredUsers:hover{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #c6aa34;
+    cursor: pointer;
+}
+
+.dropdown-menu-scroll {
+    max-height: 125px;
+    overflow-y: auto;
+}

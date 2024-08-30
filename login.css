@@ -1,0 +1,322 @@
+/* Import Poppins font from Google Fonts with specified weights */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Root CSS variables for easy theme management */
+:root {
+    /* Light theme color variables for background, text, buttons, inputs, and borders */
+    --body-bg-color: #f5f5f5;
+    --text-color: #333;
+    --container-bg: #ffffff;
+    --login-panel-bg: #e8e8e8;
+    --btn-primary-bg: #333;
+    --btn-primary-hover-bg: #ada023;
+    --input-border-color: #b0b0b0;
+    --input-focus-border-color: #333;
+    --input-focus-shadow-color: rgba(198, 170, 52, 0.15);
+    --container-border-color: #d3d3d3;
+    --login-panel-border-color: #b0b0b0;
+}
+
+
+/* Dark theme overrides using data-theme attribute */
+body[data-theme="dark"] {
+    --body-bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --container-bg: #2e2e2e;
+    --login-panel-bg: #3a3a3a;
+    --btn-primary-bg: #808080;
+    --btn-primary-hover-bg: #999;
+    --input-border-color: #it666;
+    --input-focus-border-color: #c6aa34;
+    --input-focus-shadow-color: rgba(198, 170, 52, 0.25);
+    --container-border-color: #333;
+    --login-panel-border-color: #404040;
+}
+
+/* Base body styling setting up the font, color, alignment, and full viewport height display */
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container styling for a centered box with rounded corners, shadow for depth, and a blur effect */
+.container {
+    position: relative;
+    background-color: var(--container-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 80%;
+    max-width: 1100px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 5px solid var(--container-border-color);
+}
+
+/* Styling for headings and paragraphs to manage spacing and readability */
+h2 {
+
+    padding-bottom: 15px;
+    margin-bottom: 2rem;
+}
+
+p, .form-check-label {
+    margin-bottom: 1.5rem;
+}
+
+/* Login panel specific styling for background, padding, and transitions for interactive elements */
+.login-panel {
+    background-color: var(--login-panel-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2rem;
+    border: 2px solid var(--login-panel-border-color);
+
+}
+
+/* Button styling for primary actions with distinct colors, rounding, and hover effects */
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 12px 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo image styling for consistent sizing and display across different screens */
+.logo {
+    max-width: 280px;
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Form control styling for inputs with rounded borders, padding, and focus effects */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 50px;
+    border: 1px solid var(--input-border-color);
+    padding-left: 20px;
+    transition: border 0.3s ease-in-out;
+    padding-right: 40px;
+}
+
+.form-control:focus {
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color);
+}
+
+/* Theme switch wrapper and switch for dark/light mode toggling, styled for ease of use and visibility */
+.theme-switch-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.theme-switch {
+    width: 40px;
+    height: 20px;
+    background-color: #d3d3d3;
+    border-radius: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.theme-switch-handle {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transition: 0.3s;
+}
+
+/* Dark mode specific adjustments */
+body[data-theme="dark"] .theme-switch-handle {
+    left: 20px;
+}
+
+/* Positioning for the password toggle icon within the form group for user-friendly password visibility toggle */
+.form-group.position-relative {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Style the password toggle icon */
+.password-toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 20px;
+    z-index: 2; /* Ensure it's above the input field */
+}
+
+/* padding on the password input to prevent text from going under the icon */
+#passwordInput {
+    padding-right: 40px;
+}
+
+/* Full-width buttons within the login panel for better user interaction */
+.login-panel button.btn {
+    width: 100%;
+}
+
+/* Responsive design adjustments for smaller screens to maintain usability and aesthetics */
+@media (max-width: 1199px) {
+    .container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 1008px) {
+    h2 {
+        font-size: 1.4em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .logo {
+        max-width: 230px;
+    }
+}
+
+/* Text decoration for underlined text, with customization for color and offset */
+.underlined-text {
+    text-decoration: underline;
+    text-decoration-color: #c6aa34;
+    text-underline-offset: 0.4em;
+}
+
+/* Dark mode adjustments for text and icon colors to ensure contrast and readability */
+body[data-theme="dark"] .password-toggle-icon {
+    color: #000;
+}
+
+/* Modal styling for rounded corners, shadows, and color schemes that adapt to light/dark modes */
+.modal-content {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 20px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Theme-specific button and modal content styling for consistency across light and dark modes */
+[data-theme="light"] .modal-content {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+[data-theme="light"] .btn-primary {
+    background-color: #007BFF;
+    border-color: #007BFF;
+}
+
+[data-theme="light"] .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+
+[data-theme="dark"] .modal-content {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .btn-primary {
+    background-color: #007BFF;
+    border-color: #007BFF;
+}
+
+[data-theme="dark"] .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Further responsive design adjustments for various elements to improve user experience on mobile devices */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    .form-group {
+        margin-bottom: 1rem; /* Reduce spacing */
+    }
+
+    .form-control {
+        font-size: 0.9rem; /* Adjust font size for inputs */
+    }
+
+    .password-toggle-icon {
+        font-size: 18px; /* Adjust icon size */
+    }
+
+    .btn {
+        padding: 10px 24px; /* Adjust button padding */
+    }
+
+    .theme-switch-wrapper {
+        top: 5px;
+        right: 5px; /* Adjust position of theme switch */
+    }
+
+    .logo {
+        max-width: 200px; /* Scale down logo */
+    }
+
+    .login-panel {
+        padding: 1.5rem; /* Reduce padding inside the login panel */
+    }
+
+    .container {
+        padding: 1rem; /* Reduce overall container padding */
+        margin: 0 20px; /* Adds some margin on the sides */
+    }
+}
+
+@media (max-width: 576px) {
+    .login-body {
+        padding: 20px; /* Adds padding to body to prevent content from touching the edges */
+    }
+
+    .container {
+        width: auto;
+    }
+}
+

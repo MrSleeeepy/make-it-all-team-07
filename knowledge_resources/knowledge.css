@@ -1,0 +1,43 @@
+#leftColumn{
+    position: relative;
+}
+
+#rightColumn{
+    position: relative;
+}
+
+#AddNewPostText{
+    min-width: 300px;
+}
+
+#postReturnButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#manageViewers {
+    visibility: hidden;
+}
+
+
+.dropdown-menu-scroll {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+#groupsBtn{
+    float: right;
+    visibility: hidden;
+}
+
+.ClassPosts:hover, 
+.ClassTopics:hover,
+.ClassFilteredTopics:hover,
+.ClassFilteredPosts:hover{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #c6aa34;
+    cursor: pointer;
+}

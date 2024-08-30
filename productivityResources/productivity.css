@@ -1,0 +1,55 @@
+/* -------------------------------------------
+------------------ To-do list ----------------
+---------------------------------------------- */
+
+#toDoList,
+#tickedToDoList {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+#taskList {
+    margin-top: 10px;
+}
+
+.toDoItem,
+.task,
+.project {
+    text-decoration: none;
+    width: fit-content;
+}
+
+.toDoItem:hover,
+.task:hover,
+.project:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #c6aa34;
+    cursor: pointer;
+}
+
+/* margin for high priority badge */
+.highPriorityText {
+    margin-left: 0.5em;
+}
+
+/* -------------------------------------------
+---------------- New to-do form --------------
+---------------------------------------------- */
+
+#newToDoDetail {
+    width: 100%;
+    min-height: 5em;
+}
+
+#addToDo {
+    margin-top: 1em;
+}
+
+
+#to-doArchiveModalInfo {
+    text-decoration:underline;
+    text-decoration-color: #c6aa34;
+}
